@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vieira & Dias Advogados | CNIS, Rescisão e Servidor Público</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Análise de CNIS, rescisão trabalhista e contracheque de servidor público. Veja se seus direitos estão sendo pagos corretamente.">
+  <style>
+    :root {
+      --primary: #b8993b;
+      --primary-dark: #3a3a3a;
+      --accent: #e4c56c;
+      --bg-light: #f6f4ee;
+      --text: #222222;
+      --muted: #666666;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.5;
+    }
+    a { color: var(--primary-dark); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    header, main, footer { width: 100%; }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* FAIXA PRETA COM BORDA DOURADA NO TOPO */
+    .top-strip {
+      width: 100%;
+      height: 20px;
+      background: #000000;
+      border-bottom: 3px solid #b8993b;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid #e4e0d7;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+    .logo-img { height: 52px; width: auto; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+    .nav a { color: var(--primary-dark); font-weight: 500; }
+    .nav a.btn-small {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--primary-dark);
+      color: #fff;
+      background: var(--primary-dark);
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--primary-dark);
+    }
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        right: 16px;
+        top: 60px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #fff;
+        padding: 12px;
+        border-radius: var(--radius);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        min-width: 210px;
+      }
+      .nav.show { display: flex; }
+      .nav-toggle { display: flex; }
+      .logo-img { height: 42px; }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 32px 0 28px;
+      background: radial-gradient(circle at top left, #f6f0dc 0%, #ffffff 45%, #f6f4ee 100%);
+      border-bottom: 1px solid #e4e0d7;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+    .hero-title span { color: var(--primary); }
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--primary-dark); color: #fff; }
+    .btn-primary:hover { background: #000; }
+    .btn-outline {
+      border: 1px solid var(--primary-dark);
+      color: var(--primary-dark);
+      background: transparent;
+    }
+    .btn-outline:hover { background: #f0ebdf; }
+    .hero-trust {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .hero-trust::before { content: "⚖"; color: var(--primary); font-size: 14px; }
+    .hero-logo-box {
+      background: #ffffffcc;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid #e4e0d7;
+      text-align: center;
+    }
+    .hero-logo-box img { max-width: 260px; margin: 0 auto 10px; }
+    .hero-logo-caption { font-size: 12px; color: var(--muted); }
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+      .hero-title { font-size: 24px; }
+      .hero-logo-box img { max-width: 220px; }
+    }
+
+    /* SEÇÕES GENÉRICAS */
+    section { padding: 40px 0; }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 20px;
+    }
+
+    /* SERVIÇOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      border: 1px solid #e4e0d7;
+      font-size: 13px;
+    }
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #f3e2a8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .service-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--primary-dark);
+    }
+    .service-text { color: var(--muted); margin-bottom: 6px; }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* COMO FUNCIONA */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #e4e0d7;
+      font-size: 13px;
+    }
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+    }
+    .step-text { color: var(--muted); }
+    @media (max-width: 900px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* PROVA SOCIAL */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+    }
+    .metric-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #e4e0d7;
+      text-align: center;
+    }
+    .metric-number {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .metric-label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media (max-width: 900px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+    .ig-box {
+      font-size: 13px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      background: #f6f0dc;
+      color: var(--muted);
+    }
+
+    /* SOBRE */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .about-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .about-text {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .about-list {
+      font-size: 13px;
+      color: var(--muted);
+      margin-left: 18px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* BLOCOS DE CAPTAÇÃO */
+    .lead-block {
+      background: var(--bg-light);
+      border-radius: 14px;
+      padding: 24px 18px;
+      margin-top: 10px;
+      border: 1px solid #e4e0d7;
+    }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+    .lead-text-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .lead-text-body {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .lead-list {
+      font-size: 13px;
+      color: var(--muted);
+      margin-left: 18px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 900px) {
+      .lead-grid { grid-template-columns: 1fr; }
+    }
+
+    /* FORMULÁRIOS */
+    form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #d9d1c0;
+      font-size: 13px;
+    }
+    .form-group { margin-bottom: 10px; }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #c8bfae;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    textarea { min-height: 80px; resize: vertical; }
+    input[type="file"] { font-size: 12px; }
+    .form-hint {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .form-inline-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .checkbox-row input { margin-top: 2px; }
+    .form-footer-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* CHAMADA FINAL */
+    .cta-final {
+      background: linear-gradient(135deg, #2b2b2b, #000000);
+      border-radius: 14px;
+      padding: 24px 18px;
+      color: #fff;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .cta-final-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cta-final-text {
+      font-size: 14px;
+      margin-bottom: 14px;
+      color: #e5ddc5;
+    }
+    .cta-final-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .btn-light {
+      background: #fff;
+      color: #000;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-light:hover { background: #f6f0dc; }
+    .cta-final-sec {
+      font-size: 11px;
+      color: #e0d6be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .lock { font-size: 13px; }
+
+    /* CONTATO */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .contact-list {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .contact-list div { margin-bottom: 4px; }
+    .whatsapp-buttons {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .btn-whats {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #25D366;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .btn-whats span {
+      font-size: 16px;
+    }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* RODAPÉ */
+    .site-footer {
+      background: #111111;
+      color: #e5ddc5;
+      padding: 22px 0 16px;
+      margin-top: 20px;
+      border-top: 3px solid var(--primary);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 20px;
+      font-size: 12px;
+    }
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 4px;
+      color: #e5ddc5;
+      font-size: 12px;
+    }
+    .footer-bottom {
+      font-size: 11px;
+      color: #c7bfa6;
+      text-align: center;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* BOTÃO WHATS FIXO */
+    .whats-fixed {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1000;
+    }
+    .whats-fixed a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- RETÂNGULO PRETO COM BORDA DOURADA NO TOPO -->
+  <div class="top-strip"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <img src="logo.jpg" alt="Vieira & Dias Advogados" class="logo-img">
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <a href="#topo">Home</a>
+        <a href="#cnis">Análise CNIS</a>
+        <a href="#rescisao">Análise Rescisão</a>
+        <a href="#servidor">Servidor público</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="https://instagram.com/vieiraedias.advogados" target="_blank" class="btn-small">Instagram</a>
+      </nav>
+
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-eyebrow">Direito Previdenciário & Trabalhista</div>
+          <h1 class="hero-title">
+            Descubra se você tem <span>valores a receber</span> do INSS, da sua rescisão trabalhista ou como servidor público
+          </h1>
+          <p class="hero-sub">
+            O Vieira & Dias Advogados analisa seu CNIS, sua rescisão trabalhista e o seu contracheque de servidor público
+            para identificar benefícios e verbas não pagas, com segurança e atendimento personalizado.
+          </p>
+          <div class="hero-buttons">
+            <a href="#cnis" class="btn btn-primary">Analisar meu CNIS (INSS)</a>
+            <a href="#rescisao" class="btn btn-outline">Analisar minha rescisão</a>
+            <a href="#servidor" class="btn btn-outline">Sou servidor público</a>
+          </div>
+          <div class="hero-trust">
+            Atendimento por equipe especializada em defesa do trabalhador, servidor público e segurado do INSS.
+          </div>
+        </div>
+
+        <aside class="hero-logo-box" aria-label="Identidade Vieira & Dias Advogados">
+          <img src="logo.jpg" alt="Vieira & Dias Advogados - Logo">
+          <div class="hero-logo-caption">
+            A mesma identidade visual do nosso Instagram
+            <strong>@vieiraedias.advogados</strong> agora em um canal exclusivo para análise do seu caso.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Como o Vieira & Dias Advogados pode te ajudar</h2>
+        <p class="section-sub">
+          Utilizamos nossa experiência em Direito Previdenciário e Trabalhista para identificar direitos ignorados ou pagos de forma incorreta.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">INSS</div>
+            <h3 class="service-title">Análise de CNIS</h3>
+            <p class="service-text">
+              Verificamos seu histórico de contribuições ao INSS para identificar possibilidades de aposentadoria, benefícios e revisões.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">CLT</div>
+            <h3 class="service-title">Análise de rescisão</h3>
+            <p class="service-text">
+              Conferimos se todas as verbas rescisórias foram calculadas e pagas corretamente na sua demissão ou acordo.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">SP</div>
+            <h3 class="service-title">Servidor público</h3>
+            <p class="service-text">
+              Analisamos o seu contracheque para verificar adicionais, progressões e vantagens permanentes previstas em lei e plano de carreira.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Como funciona a análise, na prática</h2>
+        <p class="section-sub">
+          Em poucos passos você envia seus dados, nós analisamos com base na lei e retornamos com orientações claras.
+        </p>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Envio dos dados</h3>
+            <p class="step-text">
+              Você preenche um formulário simples, anexa seu CNIS, contracheque ou documentos da rescisão e informa seu contato.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Análise técnica</h3>
+            <p class="step-text">
+              Nossa equipe analisa sua situação com base na legislação previdenciária, trabalhista e estatutária, identificando direitos e oportunidades.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Retorno e próximos passos</h3>
+            <p class="step-text">
+              Entramos em contato para explicar as opções disponíveis e, se você desejar, seguimos com a atuação jurídica necessária.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Por que tantas pessoas confiam no Vieira & Dias Advogados</h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">15 anos</div>
+            <div class="metric-label">
+              de atuação sólida em Direito Público, Civil, Previdenciário e Trabalhista
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">Atuação estratégica</div>
+            <div class="metric-label">
+              com análise detalhada de cada caso e soluções jurídicas personalizadas
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">100% dedicação</div>
+            <div class="metric-label">
+              à defesa de trabalhadores, servidores públicos e segurados do INSS
+            </div>
+          </div>
+        </div>
+
+        <div class="ig-box">
+          Acompanhe conteúdos diários sobre seus direitos em nosso Instagram:
+          <strong>@vieiraedias.advogados</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANÁLISE CNIS -->
+    <section id="cnis">
+      <div class="container">
+        <div class="lead-block">
+          <div class="lead-text-title">Envie seu CNIS e descubra se tem direito a benefícios ou revisão no INSS</div>
+          <p class="lead-text-body">
+            A equipe do Vieira & Dias Advogados analisa o seu CNIS para identificar tempo de contribuição, lacunas, possibilidade de aposentadoria
+            e oportunidades de revisão de benefício.
+          </p>
+
+          <div class="lead-grid">
+            <div>
+              <h3 class="lead-text-title" style="font-size:16px;">O que avaliamos no seu CNIS:</h3>
+              <ul class="lead-list">
+                <li>Tempo total de contribuição registrado.</li>
+                <li>Períodos faltantes ou lançados de forma incorreta.</li>
+                <li>Possibilidade de pedir aposentadoria em curto ou médio prazo.</li>
+                <li>Oportunidade de revisão de benefício já concedido.</li>
+                <li>Indícios de falhas do INSS que podem ser contestadas.</li>
+              </ul>
+            </div>
+
+            <!-- Formulário CNIS via Formsubmit -->
+            <form action="https://formsubmit.co/vieiraediasadvs@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Análise de CNIS - Site">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="form-group">
+                <label for="nome-cnis">Nome completo*</label>
+                <input type="text" id="nome-cnis" name="Nome completo" required>
+              </div>
+              <div class="form-group">
+                <label for="email-cnis">E-mail*</label>
+                <input type="email" id="email-cnis" name="E-mail" required>
+              </div>
+              <div class="form-group">
+                <label for="whats-cnis">Telefone/WhatsApp*</label>
+                <input type="tel" id="whats-cnis" name="WhatsApp" required>
+              </div>
+              <div class="form-group">
+                <label for="nasc-cnis">Data de nascimento</label>
+                <input type="date" id="nasc-cnis" name="Data de nascimento">
+              </div>
+              <div class="form-group">
+                <label for="situacao-cnis">Situação atual em relação ao INSS*</label>
+                <select id="situacao-cnis" name="Situação INSS" required>
+                  <option value="">Selecione</option>
+                  <option value="Ainda não recebo benefício">Ainda não recebo benefício</option>
+                  <option value="Já recebo benefício e quero revisar">Já recebo benefício e quero revisar</option>
+                  <option value="Tenho dúvidas sobre aposentadoria">Tenho dúvidas sobre aposentadoria</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="arquivo-cnis">Upload do CNIS (PDF ou imagem)*</label>
+                <input type="file" id="arquivo-cnis" name="Arquivo CNIS" accept=".pdf,.jpg,.jpeg,.png" required>
+                <div class="form-hint">Envie a versão mais recente do seu CNIS.</div>
+              </div>
+              <div class="form-group">
+                <label for="msg-cnis">Mensagem (opcional)</label>
+                <textarea id="msg-cnis" name="Mensagem"></textarea>
+              </div>
+              <div class="checkbox-row">
+                <input type="checkbox" id="lgpd-cnis" name="LGPD - consentimento" value="Concordo" required>
+                <label for="lgpd-cnis">
+                  Li e concordo com a Política de Privacidade e autorizo que o Vieira & Dias Advogados utilize meus dados
+                  para análise do meu caso e para entrar em contato comigo.
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;width:100%;">
+                Enviar meu CNIS para análise
+              </button>
+              <div class="form-footer-note">
+                Após o envio, você verá uma tela de confirmação do Formsubmit e receberá retorno pela equipe.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANÁLISE RESCISÃO -->
+    <section id="rescisao">
+      <div class="container">
+        <div class="lead-block">
+          <div class="lead-text-title">Descubra se sua rescisão trabalhista foi paga corretamente</div>
+          <p class="lead-text-body">
+            Informe alguns dados da sua demissão e receba uma avaliação se há verbas a receber ou diferenças na sua rescisão.
+          </p>
+
+          <div class="lead-grid">
+            <div>
+              <h3 class="lead-text-title" style="font-size:16px;">O que avaliamos na sua rescisão:</h3>
+              <ul class="lead-list">
+                <li>Diferenças em saldo de salário.</li>
+                <li>Férias vencidas e proporcionais + 1/3.</li>
+                <li>13º salário proporcional.</li>
+                <li>Multa de 40% do FGTS (quando aplicável).</li>
+                <li>Aviso prévio trabalhado ou indenizado.</li>
+                <li>Horas extras, adicionais e comissões não incluídas.</li>
+                <li>Multas por atraso no pagamento da rescisão.</li>
+              </ul>
+            </div>
+
+            <!-- Formulário Rescisão via Formsubmit -->
+            <form action="https://formsubmit.co/vieiraediasadvs@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Análise de Rescisão - Site">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="form-group">
+                <label for="nome-resc">Nome completo*</label>
+                <input type="text" id="nome-resc" name="Nome completo" required>
+              </div>
+              <div class="form-group">
+                <label for="email-resc">E-mail*</label>
+                <input type="email" id="email-resc" name="E-mail" required>
+              </div>
+              <div class="form-group">
+                <label for="whats-resc">Telefone/WhatsApp*</label>
+                <input type="tel" id="whats-resc" name="WhatsApp" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tipo-resc">Tipo de rescisão*</label>
+                <select id="tipo-resc" name="Tipo de rescisão" required>
+                  <option value="">Selecione</option>
+                  <option value="Demissão sem justa causa">Demissão sem justa causa</option>
+                  <option value="Pedido de demissão">Pedido de demissão</option>
+                  <option value="Demissão por justa causa">Demissão por justa causa</option>
+                  <option value="Acordo (art. 484-A)">Acordo (art. 484-A)</option>
+                  <option value="Outro / não sei informar">Outro / não sei informar</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="adm-resc">Data de admissão*</label>
+                <input type="date" id="adm-resc" name="Data de admissão" required>
+              </div>
+              <div class="form-group">
+                <label for="saida-resc">Data de saída*</label>
+                <input type="date" id="saida-resc" name="Data de saída" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sal-resc">Salário mensal bruto nos últimos meses*</label>
+                <input type="number" id="sal-resc" name="Salário bruto recente" step="0.01" required>
+              </div>
+
+              <div class="form-group">
+                <label>Você recebia também:</label>
+                <div class="form-inline-options">
+                  <label><input type="checkbox" name="Verbas habituais" value="Comissões"> Comissões</label>
+                  <label><input type="checkbox" name="Verbas habituais" value="Horas extras"> Horas extras</label>
+                  <label><input type="checkbox" name="Verbas habituais" value="Adicional noturno"> Adicional noturno</label>
+                  <label><input type="checkbox" name="Verbas habituais" value="Insalubridade"> Adicional de insalubridade</label>
+                  <label><input type="checkbox" name="Verbas habituais" value="Periculosidade"> Adicional de periculosidade</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="docs-resc">Upload de TRCT / holerites (opcional)</label>
+                <input type="file" id="docs-resc" name="Documentos rescisórios" accept=".pdf,.jpg,.jpeg,.png" multiple>
+              </div>
+
+              <div class="form-group">
+                <label for="msg-resc">Mensagem (opcional)</label>
+                <textarea id="msg-resc" name="Mensagem"></textarea>
+              </div>
+
+              <div class="checkbox-row">
+                <input type="checkbox" id="lgpd-resc" name="LGPD - consentimento" value="Concordo" required>
+                <label for="lgpd-resc">
+                  Li e concordo com a Política de Privacidade e autorizo que o Vieira & Dias Advogados utilize meus dados
+                  para análise do meu caso e para entrar em contato comigo.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;width:100%;">
+                Enviar meus dados para análise da rescisão
+              </button>
+              <div class="form-footer-note">
+                Após o envio, você verá uma tela de confirmação do Formsubmit e receberá retorno pela equipe.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIDOR PÚBLICO -->
+    <section id="servidor">
+      <div class="container">
+        <div class="lead-block">
+          <div class="lead-text-title">Servidor público: seus adicionais e progressões estão corretos?</div>
+          <p class="lead-text-body">
+            Envie seu contracheque e dados funcionais para analisarmos se os adicionais, progressões e demais vantagens estão sendo pagos de acordo
+            com o seu plano de carreira e a legislação aplicável.
+          </p>
+
+          <div class="lead-grid">
+            <div>
+              <h3 class="lead-text-title" style="font-size:16px;">O que avaliamos no contracheque do servidor:</h3>
+              <ul class="lead-list">
+                <li>Data de nomeação, estabilidade e tempo de serviço.</li>
+                <li>Enquadramento em nível/classe/cargo conforme plano de carreira.</li>
+                <li>Pagamentos de progressões e promoções.</li>
+                <li>Adicionais de insalubridade, periculosidade, noturno, tempo de serviço, etc.</li>
+                <li>Diferenças entre vencimento básico previsto em lei e valor pago em folha.</li>
+                <li>Outras vantagens permanentes que deveriam constar no contracheque.</li>
+              </ul>
+            </div>
+
+            <!-- Formulário Servidor via Formsubmit -->
+            <form action="https://formsubmit.co/vieiraediasadvs@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Servidor Público - Análise de Contracheque">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="form-group">
+                <label for="nome-serv">Nome completo*</label>
+                <input type="text" id="nome-serv" name="Nome completo" required>
+              </div>
+              <div class="form-group">
+                <label for="email-serv">E-mail*</label>
+                <input type="email" id="email-serv" name="E-mail" required>
+              </div>
+              <div class="form-group">
+                <label for="whats-serv">Telefone/WhatsApp*</label>
+                <input type="tel" id="whats-serv" name="WhatsApp" required>
+              </div>
+
+              <div class="form-group">
+                <label for="orgao-serv">Órgão/Entidade em que trabalha*</label>
+                <input type="text" id="orgao-serv" name="Órgão/Entidade" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cargo-serv">Cargo efetivo ou função*</label>
+                <input type="text" id="cargo-serv" name="Cargo" required>
+              </div>
+
+              <div class="form-group">
+                <label for="nomeacao-serv">Data de nomeação/posse*</label>
+                <input type="date" id="nomeacao-serv" name="Data de nomeação" required>
+              </div>
+
+              <div class="form-group">
+                <label for="escolaridade-serv">Grau de escolaridade considerado no cargo*</label>
+                <select id="escolaridade-serv" name="Escolaridade" required>
+                  <option value="">Selecione</option>
+                  <option value="Ensino fundamental">Ensino fundamental</option>
+                  <option value="Ensino médio">Ensino médio</option>
+                  <option value="Curso técnico">Curso técnico</option>
+                  <option value="Nível superior">Nível superior</option>
+                  <option value="Pós-graduação / especialização">Pós-graduação / especialização</option>
+                  <option value="Mestrado/Doutorado">Mestrado/Doutorado</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Exerce atividade com:</label>
+                <div class="form-inline-options">
+                  <label><input type="checkbox" name="Adicionais" value="Insalubridade"> Insalubridade</label>
+                  <label><input type="checkbox" name="Adicionais" value="Periculosidade"> Periculosidade</label>
+                  <label><input type="checkbox" name="Adicionais" value="Trabalho noturno"> Trabalho noturno</label>
+                  <label><input type="checkbox" name="Adicionais" value="Nenhum"> Nenhum dos anteriores</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="progressao-serv">Como ocorrem as progressões na sua carreira?*</label>
+                <select id="progressao-serv" name="Critério de progressão" required>
+                  <option value="">Selecione</option>
+                  <option value="Por tempo de serviço">Por tempo de serviço</option>
+                  <option value="Por avaliação de desempenho/mérito">Por avaliação de desempenho/mérito</option>
+                  <option value="Ambos">Ambos (tempo + mérito)</option>
+                  <option value="Não sei informar">Não sei informar</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="ult_prog-serv">Data aproximada da última progressão/promoção</label>
+                <input type="date" id="ult_prog-serv" name="Última progressão (aprox.)">
+              </div>
+
+              <div class="form-group">
+                <label for="contracheque-serv">Upload de contracheque(s)*</label>
+                <input type="file" id="contracheque-serv" name="Contracheques" accept=".pdf,.jpg,.jpeg,.png" multiple required>
+                <div class="form-hint">Envie ao menos o contracheque mais recente.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="leis-serv">Lei/plano de carreira ou edital do concurso (opcional)</label>
+                <input type="file" id="leis-serv" name="Leis / Plano de carreira" accept=".pdf,.jpg,.jpeg,.png" multiple>
+              </div>
+
+              <div class="form-group">
+                <label for="msg-serv">Mensagem (opcional)</label>
+                <textarea id="msg-serv" name="Mensagem"></textarea>
+              </div>
+
+              <div class="checkbox-row">
+                <input type="checkbox" id="lgpd-serv" name="LGPD - consentimento" value="Concordo" required>
+                <label for="lgpd-serv">
+                  Li e concordo com a Política de Privacidade e autorizo que o Vieira & Dias Advogados utilize meus dados
+                  para análise do meu caso e para entrar em contato comigo.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top:10px;width:100%;">
+                Enviar meu contracheque para análise
+              </button>
+              <div class="form-footer-note">
+                Após o envio, você verá uma tela de confirmação do Formsubmit e receberá retorno pela equipe.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container">
+        <h2 class="section-title">Vieira & Dias Advogados</h2>
+        <p class="section-sub">
+          Escritório com atuação focada em Direito Público, Civil, Previdenciário e Trabalhista, comprometido em traduzir a lei em resultados concretos para você.
+        </p>
+
+        <div class="about-grid">
+          <div>
+            <h3 class="about-title">Nossa missão é proteger o que é seu por direito</h3>
+            <p class="about-text">
+              O Vieira & Dias Advogados nasceu com o propósito de atuar de forma estratégica e humanizada, colocando o trabalhador, o servidor público
+              e o segurado do INSS no centro das decisões.
+            </p>
+            <ul class="about-list">
+              <li>Atuação especializada em Previdenciário (INSS, CNIS, benefícios e revisões).</li>
+              <li>Foco em Direitos Trabalhistas, rescisões e verbas não pagas.</li>
+              <li>Análise de contracheques e carreiras de servidores públicos.</li>
+            </ul>
+            <p class="about-text">
+              Também compartilhamos diariamente conteúdos educativos em nossas redes sociais, principalmente no Instagram
+              <strong>@vieiraedias.advogados</strong>, para que mais pessoas conheçam seus direitos.
+            </p>
+          </div>
+
+          <!-- Logo no lugar do espaço de foto -->
+          <div style="
+            width: 100%;
+            border-radius: 12px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border: 1px solid #e4e0d7;
+          ">
+            <img src="logo.jpg" alt="Vieira & Dias Advogados - Logo" style="max-width: 260px; height: auto;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="container">
+        <h2 class="section-title">Fale com nossa equipe</h2>
+        <p class="section-sub">
+          Use o canal que for mais confortável para você. Responderemos o mais breve possível.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-list">
+            <div><strong>E-mail:</strong> vieiraediasadvs@gmail.com</div>
+            <div><strong>Instagram:</strong> <a href="https://instagram.com/vieiraedias.advogados" target="_blank">@vieiraedias.advogados</a></div>
+            <div><strong>Endereço:</strong> Informe aqui cidade/UF e endereço do escritório.</div>
+            <div><strong>Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h (ajustar).</div>
+
+            <div class="whatsapp-buttons">
+              <a class="btn-whats" href="https://wa.me/5584996669969?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" rel="noopener">
+                <span>💬</span> Falar com Eduardo Vieira - (84) 99666-9969
+              </a>
+              <a class="btn-whats" href="https://wa.me/5584987352505?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" rel="noopener">
+                <span>💬</span> Falar com Rodolfo Dias - (84) 98735-2505
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulário de contato geral via Formsubmit -->
+          <form action="https://formsubmit.co/vieiraediasadvs@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Contato - Site">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-group">
+              <label for="nome-contato">Nome completo*</label>
+              <input type="text" id="nome-contato" name="Nome completo" required>
+            </div>
+            <div class="form-group">
+              <label for="email-contato">E-mail*</label>
+              <input type="email" id="email-contato" name="E-mail" required>
+            </div>
+            <div class="form-group">
+              <label for="whats-contato">Telefone/WhatsApp*</label>
+              <input type="tel" id="whats-contato" name="WhatsApp" required>
+            </div>
+            <div class="form-group">
+              <label for="motivo-contato">Motivo do contato*</label>
+              <select id="motivo-contato" name="Motivo" required>
+                <option value="">Selecione</option>
+                <option value="Dúvidas sobre CNIS / INSS">Dúvidas sobre CNIS / INSS</option>
+                <option value="Dúvidas sobre rescisão trabalhista">Dúvidas sobre rescisão trabalhista</option>
+                <option value="Sou servidor público">Sou servidor público</option>
+                <option value="Outro assunto">Outro assunto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem-contato">Mensagem*</label>
+              <textarea id="mensagem-contato" name="Mensagem" required></textarea>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="lgpd-contato" name="LGPD - consentimento" value="Concordo" required>
+              <label for="lgpd-contato">
+                Li e concordo com a Política de Privacidade e autorizo que o Vieira & Dias Advogados utilize meus dados
+                para entrar em contato comigo.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;width:100%;">
+              Enviar mensagem
+            </button>
+            <div class="form-footer-note">
+              Após o envio, você verá uma tela de confirmação do Formsubmit e receberá retorno pela equipe.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <div class="cta-final-title">Comece pela análise gratuita dos seus direitos</div>
+          <div class="cta-final-text">
+            Seja como trabalhador CLT, segurado do INSS ou servidor público, você pode estar deixando verbas e benefícios para trás.
+            Envie seus dados e receba uma avaliação inicial do seu caso.
+          </div>
+          <div class="cta-final-buttons">
+            <a href="#cnis" class="btn-light">Quero analisar meu CNIS</a>
+            <a href="#rescisao" class="btn-light">Quero analisar minha rescisão</a>
+            <a href="#servidor" class="btn-light">Sou servidor público</a>
+          </div>
+          <div class="cta-final-sec">
+            <span class="lock">🔒</span>
+            <span>Seus dados são tratados com sigilo e de acordo com a LGPD.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Vieira & Dias Advogados</div>
+          <p>Especializado em Direito Público, Civil, Previdenciário, Trabalhista e na análise de contracheques de servidores públicos.</p>
+        </div>
+        <div>
+          <div class="footer-title">Links</div>
+          <div class="footer-links">
+            <a href="#topo">Home</a>
+            <a href="#cnis">Análise de CNIS</a>
+            <a href="#rescisao">Análise de rescisão</a>
+            <a href="#servidor">Servidor público</a>
+            <a href="#sobre">Sobre o escritório</a>
+            <a href="#contato">Contato</a>
+            <a href="#">Política de Privacidade</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Contato</div>
+          <p>
+            E-mail: vieiraediasadvs@gmail.com<br>
+            Instagram: @vieiraedias.advogados
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © Vieira & Dias Advogados – Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÕES WHATS FIXOS -->
+  <div class="whats-fixed">
+    <a class="btn-whats" href="https://wa.me/5584996669969?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" rel="noopener">
+      <span>💬</span> Eduardo
+    </a>
+    <a class="btn-whats" href="https://wa.me/5584987352505?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" rel="noopener">
+      <span>💬</span> Rodolfo
+    </a>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('show');
+      });
+    }
+  </script>
+</body>
+</html>
